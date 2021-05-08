@@ -1,30 +1,40 @@
 ,common lisp,wisp,racket,clojure,emacs lisp
 ,,,,,
-Github popularity,,,,,
+,,,,,
+repo,,https://hg.sr.ht/~arnebab/wisp,,,
+reddit,,https://www.reddit.com/r/whitespaceLisp/,,,
+rosettacode,,https://rosettacode.org/wiki/Category:Wisp,,,
+documentation,,https://www.draketo.de/software/wisp#sec-3,,,
+documentation,,https://www.gnu.org/software/guile/manual/html_node/index.html,,,
+see also,,https://www.draketo.de/software/wisp#similar-projects,,,
+categories,,lisp-variant significant-indents transpiler,,,
 ,,,,,
 ,,,,,
-requirements,,"# in a non-root shell
-# # lines are just comments
+requirements url,,https://hg.sr.ht/~arnebab/wisp#requirements,,,
+"requirements, tested",,"# (in a non-root shell)
+# (# lines are just comments)
 # tested in Ubuntu 20.04 (in WSL)
-...",,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
+sudo apt update
+sudo apt install guile-3.0-dev
+sudo apt install make
+
+# recommended
+sudo apt install rlwrap
+
+# optional
+sudo apt install mercurial
+",,,
+"installation, beginner",,# up to configure and make,,,
+installation test,,"make check
+examples/newbase60.w 123",,,
 ,,,,,
 ,,,,,
 version used,*SBCL 1.2*,GNU Guile 3.0.1,*Racket 6.1*,*Clojure 1.6*,*Emacs 24.5*
 show version,$ sbcl --version,guile --version,$ racket --version,*displayed by repl on startup*,$ emacs --version
-grammar and execution,,,,,
+troubleshooting,,todo Guile,,,
+config files,,todo Guile,,,
+,,,,,
+,,,,,
 compiler,,,$ raco make *module*.rkt,,M-x byte-compile-file
 standalone executable,"(sb-ext:save-lisp-and-die
   ""*executable*""
@@ -36,14 +46,16 @@ java -cp clojure.jar clojure.main foo.clj",
 shebang,#!/usr/bin/env sbcl --script,,#!/usr/bin/env racket --script,"*specify full path to clojure jar:*
 
 #!/usr/bin/env java -jar clojure.jar",#!/usr/bin/env emacs --script
-repl,$ sbcl,"# in the wisp-folder
-guile -L . --language=wisp
-# or
-rlwrap guile -L . --language=wisp",$ racket,$ java -jar /PATH/TO/clojure.jar,M-x ielm
+repl,$ sbcl,"# beginner
+cd ~/wisp
+rlwrap guile -L . --language=wisp",$ racket,$ java -jar /PATH/TO/clojure.jar,M-x ielm
+repl history file,,~/.guile_history # rlwrap,,,
 command line program,,,$ racket -e '(+ 1 1)',,
 word separator,*whitespace*,,*whitespace*,*whitespace and commas*,*whitespace*
 end-of-line comment,(+ 1 1) ; adding,,(+ 1 1) ; adding,(+ 1 1) ; adding,(+ 1 1) ; adding
 multiple line comment,(+ 1 #| adding |# 1),,(+ 1 #| adding |# 1),,
+,,,,,
+,,,,,
 variables and expressions,,,,,
 identifier,"*case insensitive, cannot start with digit*
 
