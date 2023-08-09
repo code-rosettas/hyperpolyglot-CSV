@@ -6,3 +6,4 @@ If you want to contribute, I will give you the editing and commenting rights at 
 
 https://docs.google.com/spreadsheets/d/1w4MAxWcWjX3aMBRkOsqjwcAabFtY4WT4JloPRd944og
 
+(a note for M. M. : https://github.com/code-rosettas/hyperpolyglot-CSV  )
